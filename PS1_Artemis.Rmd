@@ -29,6 +29,7 @@ This is the output:
 ```{r a2}
 summary(lm1)
 ```
+
 The parameter value (coefficient) for cylinders is -2.8758 with standard error of 0.3224. The interpretation is that for every one unit of increase in cylinders, the miles per gallon for the car decreases by 2.8758. The effect is statistically significant at the 1% level.
 
 b.Regression function: $mpg = \beta_0+\beta_1 cyl + e$
@@ -41,6 +42,7 @@ This is the output:
 ```{r c2}
 summary(lm2)
 ```
+
 The coefficient for cylinders becomes -1.5078 with standard error of 0.4147. The magnitude of this coefficient is smaller than in part a. This is because the model in part a might suffer from omitted variable bias, adding vehicle weight will likely reduce the bias to some extent. We can interpret this coefficient in this way: For every one unit of increase in cylinders, the miles per gallon for the car decreases by 1.5078. The coefficient for vehicle weight is -3.191 with standard error of 0.7569. We can interpret this coefficient in this way: For every one unit of increase in vehicle weight, the miles per gallon for the car decreases by 3.191. The effects are statistically significant at the 1% level.
 
 d.Predict $mpg$ as a function of $cyl$, $wt$, and their interaction:
@@ -48,6 +50,7 @@ d.Predict $mpg$ as a function of $cyl$, $wt$, and their interaction:
 lm3 <- lm(mpg ~ cyl*wt, data=mtcars)
 summary(lm3)
 ```
+
 The sign for the coefficiencts of $cyl$ and $wt$ are still negative, which is consistent with the previous results, but the magnitudes of the coefficients change a lot. By including an interaction term, we are asserting that the effect of of cylinders on mpg depends on the effect of vehicle weight on mpg and similarly, the effect of of vehicle weight on mpg depends on the effect of cylinders on mpg. The interpretation would be: For every one unit of increase in cylinders, the miles per gallon for the car decreases by 2.9948 (3.8032-0.8084). For every one unit of increase in vehicle weight, the miles per gallon for the car decreases by 7.8472 (8.6556-0.8084). The effects are statistically significant at the 5% level.
 
 ## Nonlinear Regression
@@ -63,6 +66,7 @@ This is the output:
 ```{r non_a}
 summary(fit)
 ```
+
 In the second order polynomial regression, the effect of $age$ on $wage$ is given by the total derivative with respect to age. The interpretation is that when $age$ changes from some value $a$ to $a+1$, wage will increase by $447.0679-478.3158*(2a+1)$. The effects are statistically significant at the 0.01 significance level. The $R^2$ is about 0.08, meaning that 8% of the variance in the wage data can be explained by this model.
 
 b. Plot with 95% CI:
